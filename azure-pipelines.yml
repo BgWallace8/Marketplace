@@ -3,12 +3,6 @@
 
 name: Build and deploy ASP.Net Core app to Azure Web App - MarketplaceO
 
-on:
-  push:
-    branches:
-      - master
-  workflow_dispatch:
-
 jobs:
   build:
     runs-on: ubuntu-latest
