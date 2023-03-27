@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'MarketplaceO'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C380E7746E2E4477A148443A53FAC081 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0B7646DD60DF4D09AE25E8734F67F85B }}
           package: .
