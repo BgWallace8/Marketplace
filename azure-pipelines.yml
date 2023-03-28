@@ -9,11 +9,13 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure subscription 1 (85c49093-9951-4698-956d-cff1c4b6a018)'
+    appType: 'webAppLinux'
+    WebAppName: 'MarketplaceO'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    displayName: 'Deploy'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+
