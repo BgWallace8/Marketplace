@@ -10,6 +10,11 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: CopyFiles@2
+  inputs:
+    contents: '**/*.war'
+    targetFolder: '$(build.artifactStagingDirectory)'
+- task: PublishBuildArtifacts@1
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
@@ -18,8 +23,4 @@ steps:
     WebAppName: 'MarketplaceO'
     packageForLinux: '$(PathToPublish)/**/*.zip'
     displayName: 'Deploy'
-- task: CopyFiles@2
-  inputs:
-    contents: '**/*.war'
-    targetFolder: '$(build.artifactStagingDirectory)'
-- task: PublishBuildArtifacts@1
+
