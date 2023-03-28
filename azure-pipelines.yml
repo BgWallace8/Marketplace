@@ -18,3 +18,5 @@ steps:
     WebAppName: 'MarketplaceO'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
     displayName: 'Deploy'
+
+- task: PublishBuildArtifacts@1
