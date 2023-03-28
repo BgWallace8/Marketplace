@@ -18,5 +18,8 @@ steps:
     WebAppName: 'MarketplaceO'
     packageForLinux: '$(PathToPublish)/**/*.zip'
     displayName: 'Deploy'
-
+- task: CopyFiles@2
+  inputs:
+    contents: '**/*.war'
+    targetFolder: '$(build.artifactStagingDirectory)'
 - task: PublishBuildArtifacts@1
